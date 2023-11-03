@@ -1,6 +1,6 @@
 const UserController = require("./controllers/UserController");
 const ChairController = require("./controllers/ChairController");
-const TypeChairController = require("./controllers/TypeChairController");
+
 
 module.exports = (app) => {
   app.get("/users", UserController.index);
@@ -48,15 +48,5 @@ module.exports = (app) => {
 
   app.get("/chair/:chairId", ChairController.show);
 
-  ////////////Type chair //////
-
-  app.get("/types", TypeChairController.index);
-
-  app.post("/type", TypeChairController.create);
-
-  app.put("/type/:typeId", TypeChairController.put);
-
-  app.delete("/type/:typeId", TypeChairController.remove);
-
-  app.get("/type/:typeId", TypeChairController.show);
+  
 };
