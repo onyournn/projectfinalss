@@ -2,18 +2,18 @@ import Api from "@/services/Api";
 
 export default {
   index(search) {
-    return Api().get('chairs');
+    return Api().get('beverages');
   },
-  show(chairId) {
-    return Api().get('chair/' + chairId);
+  show(beverageId) {
+    return Api().get('beverage/' + beverageId);
   },
-  post(chair) {
-    return Api().post('chair', chair);
+  post(beverage) {
+    return Api().post('beverage', beverage);
   },
-  put(chair) {
-    return Api().put('chair/' + chair.id, chair);
+  put(beverage) {
+    return Api().put('beverage/' + beverage.id, beverage);
   },
-  delete(chair) {
-    return Api().delete('chair/' + chair.id, chair);
+  delete(beverage) {
+    return Api().delete('beverage/' + beverage.id, beverage);
   }
 };

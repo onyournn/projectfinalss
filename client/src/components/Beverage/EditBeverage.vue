@@ -1,32 +1,30 @@
 <template>
     <div>
-        <h1>Edit User</h1>
-        <form v-on:submit.prevent="editChair">
-          <p>Name : <input type="text" v-model="chair.ChairName"></p>
-          <p>Material : <input type="text" v-model="chair.ChairMaterial"> </p>
-          <p>Color : <input type="text" v-model="chair.ChairColor"> </p>
-          <p>Size : <input type="text" v-model="chair.ChairSize"> </p>
-          <p>Price : <input type="text" v-model="chair.ChairPrice"> </p>
-          <p><button type="submit">Edit chair</button></p>
-          <button v-on:click="navigateTo('/chairs')">กลับ</button>
-      </form>
+        <h1>Edit Beverage</h1>
+        <form v-on:submit.prevent="editBeverage">
+            <p>name : <input type="text" v-model="beverage.Beveragename"></p>
+            <p>brand : <input type="text" v-model="beverage.Beveragebrand"> </p>
+            <p>price : <input type="text" v-model="beverage.Beverageprice"> </p>
+            <p>category: <input type="text" v-model="beverage.Beveragecategory"> </p>
+            <p><button type="submit">Edit beverage</button></p>
+        </form>
+         <button v-on:click="navigateTo('/beverages')">กลับ</button>
         <hr>
     </div>
 </template>
 
 <script>
 
-import ChairService from '@/services/ChairService'
+import BeverageService from '@/services/BeverageService'
 
 export default {
   data() {
     return {
-      chair: {
-                ChairName: '',
-                ChairMaterial: '',
-                ChairColor: '',
-                ChairSize: '',
-                ChairPrice: '',
+      beverage: {
+                Beveragename: '',
+                Beveragebrand: '',
+                Beverageprice: '',
+                Beveragecategory: '',
             }
     }
   },
@@ -36,10 +34,10 @@ export default {
       this.$router.push(route)
     },
 
-    async editChair() {
+    async editBeverage() {
       try {
-        await ChairService.put(this.chair)
-        this.$router.push({ name: 'chairs' })
+        await BeverageService.put(this.beverage)
+        this.$router.push({ name: 'beverages' })
       } catch (err) {
         console.log(err)
       }
@@ -48,8 +46,8 @@ export default {
 
   async created() {
     try {
-      let chairId = this.$route.params.chairId
-      this.chair = (await ChairService.show(chairId)).data
+      let beverageId = this.$route.params.beverageId
+      this.beverage = (await BeverageService.show(beverageId)).data
     } catch (error) {
       console.log(error)
     }

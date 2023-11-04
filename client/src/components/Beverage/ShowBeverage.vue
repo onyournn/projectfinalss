@@ -1,16 +1,15 @@
 <template>
     <div>
-        <h1>Get Chair By Id</h1>
+        <h1>Get Beverage By Id</h1>
         <hr>
-        <p>{{ chair.id }}</p>
-        <p>{{ chair.ChairName }}</p>
-        <p>{{ chair.ChairMaterial }}</p>
-        <p>{{ chair.ChairColor }}</p>
-        <p>{{ chair.ChairSize }}</p>
-        <p>{{ chair.ChairPrice }}</p>
+        <p>{{ beverage.id }}</p>
+        <p>{{ beverage.Beveragename }}</p>
+        <p>{{ beverage.Beveragebrand }}</p>
+        <p>{{ beverage.Beverageprice }}</p>
+        <p>{{ beverage.Beveragecategory }}</p>
         <p>
-            <button v-on:click="navigateTo('/chair/edit/'+chair.id)">Edit chair</button>
-            <button v-on:click="navigateTo('/chairs')">กลับ</button>
+            <button v-on:click="navigateTo('/beverage/edit/'+beverage.id)">Edit beverage</button>
+            <button v-on:click="navigateTo('/beverages')">กลับ</button>
         </p>
         <hr>
     </div>
@@ -18,13 +17,13 @@
 
 <script>
 
-import ChairService from '@/services/ChairService'
+import BeverageService from '@/services/BeverageService'
 
 export default {
 
     data() {
         return {
-            chair: ""
+            beverage: ""
         }
     },
 
@@ -37,8 +36,8 @@ export default {
 
     async created() {
         try {
-            let chairId = this.$route.params.chairId
-            this.chair = (await ChairService.show(chairId)).data
+            let beverageId = this.$route.params.beverageId
+            this.beverage = (await BeverageService.show(beverageId)).data
         } catch (error) {
             console.log(error)
         }

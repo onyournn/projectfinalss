@@ -8,7 +8,7 @@
                             <h2>Chair <b>List</b></h2>
                             <div class="col-btn">
                                 <a class="btn btn-secondary" v-on:click="navigateTo('chair/create')"><i
-                                        class="material-icons">&#xE147;</i> <span>Add New Chair</span></a>
+                                        class="material-icons">&#xE147;</i> <span>Add New Beverage</span></a>
 
                             </div>
                         </div>
@@ -18,33 +18,31 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Name <i class=""></i></th>
-                            <th>Material</th>
-                            <th>Color <i class=""></i></th>
-                            <th>Size(W,l,h)</th>
-                            <th>Price <i class=""></i></th>
-                            <th>Actions</th>
+                            <th>name <i class=""></i></th>
+                            <th>brand</th>
+                            <th>price <i class=""></i></th>
+                            <th>category</th>
+                        
                         </tr>
                     </thead>
                     <tbody>
 
 
-                        <tr v-for="chair in chairs" v-bind:key="chair.id">
-                            <td>{{ chair.id }}</td>
-                            <td>{{ chair.ChairName }}</td>
-                            <td>{{ chair.ChairMaterial }}</td>
-                            <td>{{ chair.ChairColor }}</td>
-                            <td>{{ chair.ChairSize }}</td>
-                            <td>{{ chair.ChairPrice }}</td>
+                        <tr v-for="beverage in beverages" v-bind:key="beverage.id">
+                            <td>{{ beverage.id }}</td>
+                            <td>{{ beverage.beveragename }}</td>
+                            <td>{{ beverage.beveragebrand }}</td>
+                            <td>{{ beverage.beverageprice }}</td>
+                            <td>{{ beverage.beveragecategory }}</td>
                             <td>
                                 <a class="view" title="View" data-toggle="tooltip"
-                                    v-on:click="navigateTo('chair/' + chair.id)"><i class="material-icons">&#xE417;</i> </a>
+                                    v-on:click="navigateTo('beverage/' + beverage.id)"><i class="material-icons">&#xE417;</i> </a>
 
                                 <a class="edit" title="Edit" data-toggle="tooltip"
-                                    v-on:click="navigateTo('chair/edit/'+chair.id)"><i
+                                    v-on:click="navigateTo('beverage/edit/'+beverage.id)"><i
                                         class="material-icons">&#xE254;</i> </a>
 
-                                <a class="delete" title="Delete" data-toggle="tooltip" v-on:click="deleteChair(chair)"><i
+                                <a class="delete" title="Delete" data-toggle="tooltip" v-on:click="deleteChair(beverage)"><i
                                         class="material-icons">&#xE872;</i> </a>
                             </td>
                         </tr>
@@ -60,12 +58,12 @@
 
 <script>
 
-import ChairService from '@/services/ChairService'
+import BeverageService from '@/services/BeverageService'
 
 export default {
     data() {
         return {
-            chairs: ""
+            beverages: ""
         }
     },
     methods: {
@@ -74,26 +72,26 @@ export default {
             this.$router.push(route)
         },
 
-        async deleteChair(chair) {
-            let result = confirm("Want to delete chair?")
+        async deleteBeverage(beverage) {
+            let result = confirm("Want to delete beverage?")
             if (result) {
                 try {
-                    await ChairService.delete(chair)
+                    await BeverageService.delete(beverage)
                     this.refreshData()
                 } catch (err) {
                     console.log(err)
                 }
             }
-            console.log(chair);
+            console.log(beverage);
         },
         async refreshData() {
-            this.chairs = (await ChairService.index()).data
+            this.beverages = (await BeverageService.index()).data
         }
     },
 
     async created() {
-        this.chairs = (await ChairService.index()).data
-        console.log(this.chairs);
+        this.beverages = (await BeverageService.index()).data
+        console.log(this.beverages);
     }
 
 }

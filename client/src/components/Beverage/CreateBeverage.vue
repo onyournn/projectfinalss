@@ -2,30 +2,28 @@
     <div>
         <h1>Create Beverage</h1>
         <form v-on:submit.prevent="createBeverage">
-            <p>Name : <input type="text" v-model="chair.ChairName"></p>
-            <p>Material : <input type="text" v-model="chair.ChairMaterial"> </p>
-            <p>Color : <input type="text" v-model="chair.ChairColor"> </p>
-            <p>Size: <input type="text" v-model="chair.ChairSize"> </p>
-            <p>Price : <input type="text" v-model="chair.ChairPrice"> </p>
-            <p><button type="submit">Create chair</button></p>
+            <p>name : <input type="text" v-model="beverage.Beveragename"></p>
+            <p>brand : <input type="text" v-model="beverage.Beveragebrand"> </p>
+            <p>price : <input type="text" v-model="beverage.Beverageprice"> </p>
+            <p>category: <input type="text" v-model="beverage.Beveragecategory"> </p>
+            <p><button type="submit">Create beverage</button></p>
         </form>
-         <button v-on:click="navigateTo('/chairs')">กลับ</button>
+         <button v-on:click="navigateTo('/beverages')">กลับ</button>
         
         <hr>
     </div>
 </template>
 <script>
 
-import ChairService from '@/services/ChairService'
+import BeverageService from '@/services/BeverageService'
 export default {
     data() {
         return {
-            chair: {
-                ChairName: '',
-                ChairMaterial: '',
-                ChairColor: '',
-                ChairSize: '',
-                ChairPrice: '',
+            beverage: {
+                Beveragename: '',
+                Beveragebrand: '',
+                Beverageprice: '',
+                Beveragecategory: '',
             }
         }
     },
@@ -33,10 +31,10 @@ export default {
         navigateTo(route) {
             this.$router.push(route).catch(err => {})
         },
-        async createChair() {
+        async createBeverage() {
             try {
-                await ChairService.post(this.chair)
-                this.$router.push('/chairs')
+                await BeverageService.post(this.beverage)
+                this.$router.push('/Beverages')
             } catch (err) {
                 console.log(err)
             }
