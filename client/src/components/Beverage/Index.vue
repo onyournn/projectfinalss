@@ -130,5 +130,11 @@ h2 {
     right: 25px;
     bottom: 10px;
 }
+
+/* .section{
+    background-image: url('');
+    background-attachment: fixed;
+    height:100vh;
+} */
 </style>
    

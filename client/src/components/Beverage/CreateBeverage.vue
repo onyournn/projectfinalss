@@ -6,7 +6,9 @@
             <p>brand : <input type="text" v-model="beverage.brand"> </p>
             <p>price : <input type="text" v-model="beverage.price"> </p>
             <p>category: <input type="text" v-model="beverage.category"> </p>
-            <p><button type="submit">Create beverage</button></p>
+            <!-- <p><button type="submit"></button>Create beverage</p> -->
+            <button type="button" class="btn btn-info">Create beverage</button>
+
         </form>
          <button v-on:click="navigateTo('/beverages')">กลับ</button>
         
