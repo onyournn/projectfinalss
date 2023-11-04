@@ -7,7 +7,7 @@
                         <div class="col">
                             <h2>Chair <b>List</b></h2>
                             <div class="col-btn">
-                                <a class="btn btn-secondary" v-on:click="navigateTo('chair/create')"><i
+                                <a class="btn btn-secondary" v-on:click="navigateTo('beverage/create')"><i
                                         class="material-icons">&#xE147;</i> <span>Add New Beverage</span></a>
 
                             </div>
@@ -30,10 +30,10 @@
 
                         <tr v-for="beverage in beverages" v-bind:key="beverage.id">
                             <td>{{ beverage.id }}</td>
-                            <td>{{ beverage.beveragename }}</td>
-                            <td>{{ beverage.beveragebrand }}</td>
-                            <td>{{ beverage.beverageprice }}</td>
-                            <td>{{ beverage.beveragecategory }}</td>
+                            <td>{{ beverage.name }}</td>
+                            <td>{{ beverage.brand }}</td>
+                            <td>{{ beverage.price }}</td>
+                            <td>{{ beverage.category }}</td>
                             <td>
                                 <a class="view" title="View" data-toggle="tooltip"
                                     v-on:click="navigateTo('beverage/' + beverage.id)"><i class="material-icons">&#xE417;</i> </a>
@@ -42,7 +42,7 @@
                                     v-on:click="navigateTo('beverage/edit/'+beverage.id)"><i
                                         class="material-icons">&#xE254;</i> </a>
 
-                                <a class="delete" title="Delete" data-toggle="tooltip" v-on:click="deleteChair(beverage)"><i
+                                <a class="delete" title="Delete" data-toggle="tooltip" v-on:click="deleteBeverage(beverage)"><i
                                         class="material-icons">&#xE872;</i> </a>
                             </td>
                         </tr>

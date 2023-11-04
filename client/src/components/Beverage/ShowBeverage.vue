@@ -3,10 +3,10 @@
         <h1>Get Beverage By Id</h1>
         <hr>
         <p>{{ beverage.id }}</p>
-        <p>{{ beverage.Beveragename }}</p>
-        <p>{{ beverage.Beveragebrand }}</p>
-        <p>{{ beverage.Beverageprice }}</p>
-        <p>{{ beverage.Beveragecategory }}</p>
+        <p>{{ beverage.name }}</p>
+        <p>{{ beverage.brand }}</p>
+        <p>{{ beverage.price }}</p>
+        <p>{{ beverage.category }}</p>
         <p>
             <button v-on:click="navigateTo('/beverage/edit/'+beverage.id)">Edit beverage</button>
             <button v-on:click="navigateTo('/beverages')">กลับ</button>

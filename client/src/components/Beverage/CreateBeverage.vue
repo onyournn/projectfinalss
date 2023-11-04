@@ -2,10 +2,10 @@
     <div>
         <h1>Create Beverage</h1>
         <form v-on:submit.prevent="createBeverage">
-            <p>name : <input type="text" v-model="beverage.Beveragename"></p>
-            <p>brand : <input type="text" v-model="beverage.Beveragebrand"> </p>
-            <p>price : <input type="text" v-model="beverage.Beverageprice"> </p>
-            <p>category: <input type="text" v-model="beverage.Beveragecategory"> </p>
+            <p>name : <input type="text" v-model="beverage.name"></p>
+            <p>brand : <input type="text" v-model="beverage.brand"> </p>
+            <p>price : <input type="text" v-model="beverage.price"> </p>
+            <p>category: <input type="text" v-model="beverage.category"> </p>
             <p><button type="submit">Create beverage</button></p>
         </form>
          <button v-on:click="navigateTo('/beverages')">กลับ</button>
@@ -20,10 +20,10 @@ export default {
     data() {
         return {
             beverage: {
-                Beveragename: '',
-                Beveragebrand: '',
-                Beverageprice: '',
-                Beveragecategory: '',
+                name: '',
+                brand: '',
+                price: '',
+                category: '',
             }
         }
     },

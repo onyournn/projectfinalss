@@ -1,47 +1,43 @@
 <template>
     <div>
-        <h1>Edit Chair</h1>
-        <form v-on:submit.prevent="editChair">
-            <p>Name : <input type="text" v-model="chair.ChairName"></p>
-            <p>Material : <input type="text" v-model="chair.ChairMaterial"> </p>
-            <p>Color : <input type="text" v-model="chair.ChairColor"> </p>
-            <p>Size : <input type="text" v-model="chair.ChairSize"> </p>
-            <p>Price : <input type="text" v-model="chair.ChairPrice"> </p>
-            <p><button type="submit">Edit chair</button></p>
-            <button v-on:click="navigateTo('/chairs')">กลับ</button>
+        <h1>Edit Beverage</h1>
+        <form v-on:submit.prevent="editBeverage">
+            <p>name : <input type="text" v-model="beverages.Beveragename"></p>
+            <p>brand : <input type="text" v-model="beverages.Beveragebrand"> </p>
+            <p>price : <input type="text" v-model="beverages.Beverageprice"> </p>
+            <p>category: <input type="text" v-model="beverages.Beveragecategory"> </p>
+            <p><button type="submit">Edit beverage</button></p>
         </form>
+         <button v-on:click="navigateTo('/beverages')">กลับ</button>
         <hr>
         <div>
-            <p>Name: {{ chair.ChairName }}</p>
-            <p>Material: {{ chair.ChairMaterial }}</p>
-            <p>Color: {{ chair.ChairColor }}</p>
-            <p>Size: {{ chair.ChairSize }}</p>
-            <p>Price: {{ chair.ChairPrice }}</p>
+            <p>name: {{ beverages.Beveragename }}</p>
+            <p>brand: {{ beverages.Beveragebrand }}</p>
+            <p>price: {{ beverages.Beverageprice }}</p>
+            <p>category: {{ beverages.Beveragecategory }}</p>
             <p></p>
         </div>
     </div>
 </template>
 <script>
-import ChairService from '@/services/ChairService'
+import BeverageService from '@/services/BeverageService'
 export default {
     data() {
         return {
-            chair: {
-                ChairName: '',
-                ChairMaterial: '',
-                ChairColor: '',
-                ChairSize: '',
-                ChairPrice: '',
-                status:'active'
+            beverages: {
+                Beveragename: '',
+                Beveragebrand: '',
+                Beverageprice: '',
+                Beveragecategory: '',
             }
         }
     },
     methods: {
-        async editChair() {
+        async editBeverage() {
             try {
-                await ChairService.put(this.chair)
+                await BeverageService.put(this.beverage)
                 this.$router.push({
-                    name: 'chairs'
+                    name: 'beverages'
                 })
             } catch (err) {
                 console.log(err)
@@ -50,8 +46,8 @@ export default {
     },
     async created() {
         try {
-            let chairId = this.$route.params.chairId
-            this.chair = (await ChairService.show(chairId)).data
+            let beverageId = this.$route.params.beverageId
+            this.beverages = (await BeverageService.show(beverageId)).data
         } catch (error) {
             console.log(error)
         }
