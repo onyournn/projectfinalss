@@ -99,6 +99,13 @@ export default {
 
 
 <style scoped>
+.background-color {
+    text-align: center;
+    background-color: #382c18;
+    /* background-size: cover;
+    background-repeat: no-repeat; */
+    height: 100vh;
+}
 .view {
     cursor: pointer
 }
