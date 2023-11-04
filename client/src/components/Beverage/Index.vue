@@ -5,7 +5,7 @@
                 <div class="table-title">
                     <div class="row">
                         <div class="col">
-                            <h2>Chair <b>List</b></h2>
+                            <h2>Beverage List</h2>
                             <div class="col-btn">
                                 <a class="btn btn-secondary" v-on:click="navigateTo('beverage/create')"><i
                                         class="material-icons">&#xE147;</i> <span>Add New Beverage</span></a>
@@ -108,24 +108,24 @@ export default {
 }
 
 .col {
-    background-color: #FFE4B5;
+    background-color: #382c18;
     width: 100%;
     margin-bottom: 5px;
     padding: 20px;
 }
 
 h2 {
-    color: #CD5C5C;
+    color: rgb(205, 169, 92);
     font-size: 40px;
 }
 
 .btn {
-    color: aliceblue;
+    color: rgb(46, 38, 6);
 }
 
 .btn-secondary {
     position: absolute;
-    background-color: rgb(134, 213, 134);
+    background-color: rgb(249, 170, 0);
     right: 25px;
     bottom: 10px;
 }
