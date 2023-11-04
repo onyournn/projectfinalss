@@ -1,15 +1,15 @@
-const { Chair } = require('../models')
+const { Beverage } = require('../models')
 
 module.exports = {
 
     // Get all users
     async index(req, res) {
         try {
-            const chairs = await Chair.findAll()
-            res.send(chairs)
+            const beverages = await Beverage.findAll()
+            res.send(beverages)
         } catch (err) {
             res.status(500).send({
-                error: 'error ไรวะ'
+                error: 'error'
             })
         }
     },
@@ -17,11 +17,11 @@ module.exports = {
     // res.send('ทำการสร้างผู้ใช้งาน' + JSON.stringify(req.body));
     async create(req, res) {
         try {
-            const chair = await Chair.create(req.body)
-            res.send(chair.toJSON())
+            const beverage = await Beverage.create(req.body)
+            res.send(beverage.toJSON())
         } catch (err) {
             res.status(500).send({
-                error: 'Create user incorrect'
+                error: 'Create Beverage incorrect'
             })
         }
     },
@@ -30,15 +30,15 @@ module.exports = {
     // res.send('แก้ไขข้อมูลผู้ใช้ ' + req.params.userId + ' : ' + JSON.stringify(req.body.name));
     async put(req, res) {
         try {
-            await Chair.update(req.body, {
+            await Beverage.update(req.body, {
                 where: {
-                    id: req.params.chairId
+                    id: req.params.beverageId
                 }
             })
             res.send(req.body)
         } catch (err) {
             res.status(500).send({
-                error: 'Update user incorrect'
+                error: 'Update Beverage incorrect'
             })
         }
     },
@@ -48,21 +48,21 @@ module.exports = {
     // delete user
     async remove(req, res) {
         try {
-            const chair = await Chair.findOne({
+            const beverage = await Beverage.findOne({
                 where: {
-                    id: req.params.chairId
+                    id: req.params.beverageId
                 }
             })
-            if (!chair) {
+            if (!beverage) {
                 return res.status(403).send({
-                    error: 'The user information was incorrect'
+                    error: 'The Beverage information was incorrect'
                 })
             }
-            await chair.destroy()
-            res.send(chair)
+            await beverage.destroy()
+            res.send(beverage)
         } catch (err) {
             res.status(500).send({
-                error: 'The user information was incorrect'
+                error: 'The Beverage information was incorrect'
             })
         }
     },
@@ -70,11 +70,11 @@ module.exports = {
     // Show user by id
     async show(req, res) {
         try {
-            const chair = await Chair.findByPk(req.params.chairId)
-            res.send(chair)
+            const beverage = await Beverage.findByPk(req.params.beverageId)
+            res.send(beverage)
         } catch (err) {
             res.status(500).send({
-                error: 'The user information was incorrect'
+                error: 'The Beverage information was incorrect'
             })
         }
     }

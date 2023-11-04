@@ -1,5 +1,5 @@
 const UserController = require("./controllers/UserController");
-const ChairController = require("./controllers/ChairController");
+const BeverageController = require("./controllers/BeverageController");
 
 
 module.exports = (app) => {
@@ -17,36 +17,17 @@ module.exports = (app) => {
   //show by id
   app.get("/user/:userId", UserController.show);
 
-  // app.get('/musics',MusicController.index)
 
-  // app.post('/music', MusicController.create)
+  ///////////////Beverage
+  app.get("/beverages", BeverageController.index);
 
-  // app.put('/music/:musicId' , MusicController.put)
+  app.post("/beverage", BeverageController.create);
 
-  // app.delete('/music/:musicId', MusicController.remove)
+  app.put("/beverage/:beverageId", BeverageController.put);
 
-  // app.get('/music/:musicId', MusicController.show)
+  app.delete("/beverage/:beverageId", BeverageController.remove);
 
-  // app.get('/temples',TempleController.index)
-
-  // app.post('/temple', TempleController.create)
-
-  // app.put('/temple/:templeId' , TempleController.put)
-
-  // app.delete('/temple/:templeId', TempleController.remove)
-
-  // app.get('/temple/:templeId', TempleController.show)
-
-  ///////////////Chair
-  app.get("/chairs", ChairController.index);
-
-  app.post("/chair", ChairController.create);
-
-  app.put("/chair/:chairId", ChairController.put);
-
-  app.delete("/chair/:chairId", ChairController.remove);
-
-  app.get("/chair/:chairId", ChairController.show);
+  app.get("/beverage/:beverageId", BeverageController.show);
 
   
 };

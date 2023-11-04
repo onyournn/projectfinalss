@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h1>Create Chair</h1>
-        <form v-on:submit.prevent="createChair">
+        <h1>Create Beverage</h1>
+        <form v-on:submit.prevent="createBeverage">
             <p>Name : <input type="text" v-model="chair.ChairName"></p>
             <p>Material : <input type="text" v-model="chair.ChairMaterial"> </p>
             <p>Color : <input type="text" v-model="chair.ChairColor"> </p>
