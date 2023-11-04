@@ -99,6 +99,14 @@ export default {
 
 
 <style scoped>
+/* .background-image {
+    text-align: center;
+    background-image: url('~@/pic/bg2.jpg');
+    opacity: 0.8;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+} */
 
 .view {
     cursor: pointer

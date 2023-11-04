@@ -8,8 +8,8 @@
         <p>{{ beverage.price }}</p>
         <p>{{ beverage.category }}</p>
         <p>
-            <button v-on:click="navigateTo('/beverage/edit/'+beverage.id)">Edit beverage</button>
-            <button v-on:click="navigateTo('/beverages')">กลับ</button>
+            <button v-on:click="navigateTo('/beverage/edit/'+beverage.id)" class="btn">Edit beverage</button>
+            <button v-on:click="navigateTo('/beverages')">back</button>
         </p>
         <hr>
     </div>
