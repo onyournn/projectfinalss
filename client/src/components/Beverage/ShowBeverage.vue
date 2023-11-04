@@ -2,11 +2,11 @@
     <div>
         <h1>Get Beverage By Id</h1>
         <hr>
-        <p>{{ beverage.id }}</p>
-        <p>{{ beverage.name }}</p>
-        <p>{{ beverage.brand }}</p>
-        <p>{{ beverage.price }}</p>
-        <p>{{ beverage.category }}</p>
+        <p>ID : {{ beverage.id }}</p>
+        <p>ชื่อเครื่องดื่ม : {{ beverage.name }}</p>
+        <p>ยี่ห้อ : {{ beverage.brand }}</p>
+        <p>ราคา : {{ beverage.price }} บาท</p>
+        <p>หมวดหมู่ : {{ beverage.category }}</p>
         <p>
             <button v-on:click="navigateTo('/beverage/edit/'+beverage.id)" class="btn">Edit beverage</button>
             <button v-on:click="navigateTo('/beverages')">back</button>

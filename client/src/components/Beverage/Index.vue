@@ -1,15 +1,15 @@
 <template>
+    <div class="BgColor">
     <div class="container-xl">
         <div class="table-responsive">
             <div class="table-wrapper">
                 <div class="table-title">
                     <div class="row">
                         <div class="col">
-                            <h2>Beverage List</h2>
+                            <h2>Beverage Store</h2>
                             <div class="col-btn">
                                 <a class="btn btn-secondary" v-on:click="navigateTo('beverage/create')"><i
-                                        class="material-icons">&#xE147;</i> <span>Add New Beverage</span></a>
-
+                                        class="material-icons">&#xE147;</i> <span>Add Beverage</span></a>
                             </div>
                         </div>
                     </div>
@@ -22,12 +22,10 @@
                             <th>brand</th>
                             <th>price <i class=""></i></th>
                             <th>category</th>
-                        
+                            <th>Active</th>
                         </tr>
                     </thead>
                     <tbody>
-
-
                         <tr v-for="beverage in beverages" v-bind:key="beverage.id">
                             <td>{{ beverage.id }}</td>
                             <td>{{ beverage.name }}</td>
@@ -36,14 +34,15 @@
                             <td>{{ beverage.category }}</td>
                             <td>
                                 <a class="view" title="View" data-toggle="tooltip"
-                                    v-on:click="navigateTo('beverage/' + beverage.id)"><i class="material-icons">&#xE417;</i> </a>
+                                    v-on:click="navigateTo('beverage/' + beverage.id)"><i
+                                        class="material-icons">&#xE417;</i> </a>
 
                                 <a class="edit" title="Edit" data-toggle="tooltip"
-                                    v-on:click="navigateTo('beverage/edit/'+beverage.id)"><i
+                                    v-on:click="navigateTo('beverage/edit/' + beverage.id)"><i
                                         class="material-icons">&#xE254;</i> </a>
 
-                                <a class="delete" title="Delete" data-toggle="tooltip" v-on:click="deleteBeverage(beverage)"><i
-                                        class="material-icons">&#xE872;</i> </a>
+                                <a class="delete" title="Delete" data-toggle="tooltip"
+                                    v-on:click="deleteBeverage(beverage)"><i class="material-icons">&#xE872;</i> </a>
                             </td>
                         </tr>
 
@@ -54,6 +53,7 @@
             </div>
         </div>
     </div>
+</div>
 </template>
 
 <script>
@@ -108,8 +108,15 @@ export default {
     height: 100vh;
 } */
 
+.BgColor{
+    background-color: rgb(0, 0, 0);
+}
+.container-xl{
+background-color: rgb(249, 222, 222);
+}
 .view {
-    cursor: pointer
+    cursor: pointer;
+
 }
 
 .material-icons {

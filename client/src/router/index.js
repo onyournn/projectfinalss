@@ -45,6 +45,11 @@ export default new Router({
     /////////////////////////////////Beverage//
 
     {
+      path: '/',
+      name: 'HelloWorld',
+      component: HelloWorld
+    },
+    {
       path: "/beverages",
       name: "beverages",
       component: BeverageIndex
