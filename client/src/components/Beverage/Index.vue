@@ -1,59 +1,61 @@
 <template>
     <div class="BgColor">
-    <div class="container-xl">
-        <div class="table-responsive">
-            <div class="table-wrapper">
-                <div class="table-title">
-                    <div class="row">
-                        <div class="col">
-                            <h2>Beverage Store</h2>
-                            <div class="col-btn">
-                                <a class="btn btn-secondary" v-on:click="navigateTo('beverage/create')"><i
-                                        class="material-icons">&#xE147;</i> <span>Add Beverage</span></a>
+        <div class="container-xl">
+            <div class="">
+                <div class="table-wrapper">
+                    <div class="table-title">
+                        <div class="row">
+                            <div class="col">
+                                <h2>Beverage Store</h2>
+                                <div class="col-btn">
+                                    <a class="btn btn-secondary" v-on:click="navigateTo('beverage/create')"><i
+                                            class="material-icons">&#xE147;</i> <span>Add Beverage</span></a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="tablebg">
+                        <table class="table table-striped table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>name <i class=""></i></th>
+                                    <th>brand</th>
+                                    <th>price <i class=""></i></th>
+                                    <th>category</th>
+                                    <th>Active</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="beverage in beverages" v-bind:key="beverage.id">
+                                    <td>{{ beverage.id }}</td>
+                                    <td>{{ beverage.name }}</td>
+                                    <td>{{ beverage.brand }}</td>
+                                    <td>{{ beverage.price }}</td>
+                                    <td>{{ beverage.category }}</td>
+                                    <td>
+                                        <a class="view" title="View" data-toggle="tooltip"
+                                            v-on:click="navigateTo('beverage/' + beverage.id)"><i
+                                                class="material-icons">&#xE417;</i> </a>
+
+                                        <a class="edit" title="Edit" data-toggle="tooltip"
+                                            v-on:click="navigateTo('beverage/edit/' + beverage.id)"><i
+                                                class="material-icons">&#xE254;</i> </a>
+
+                                        <a class="delete" title="Delete" data-toggle="tooltip"
+                                            v-on:click="deleteBeverage(beverage)"><i class="material-icons">&#xE872;</i>
+                                        </a>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <table class="table table-striped table-hover table-bordered">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>name <i class=""></i></th>
-                            <th>brand</th>
-                            <th>price <i class=""></i></th>
-                            <th>category</th>
-                            <th>Active</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="beverage in beverages" v-bind:key="beverage.id">
-                            <td>{{ beverage.id }}</td>
-                            <td>{{ beverage.name }}</td>
-                            <td>{{ beverage.brand }}</td>
-                            <td>{{ beverage.price }}</td>
-                            <td>{{ beverage.category }}</td>
-                            <td>
-                                <a class="view" title="View" data-toggle="tooltip"
-                                    v-on:click="navigateTo('beverage/' + beverage.id)"><i
-                                        class="material-icons">&#xE417;</i> </a>
-
-                                <a class="edit" title="Edit" data-toggle="tooltip"
-                                    v-on:click="navigateTo('beverage/edit/' + beverage.id)"><i
-                                        class="material-icons">&#xE254;</i> </a>
-
-                                <a class="delete" title="Delete" data-toggle="tooltip"
-                                    v-on:click="deleteBeverage(beverage)"><i class="material-icons">&#xE872;</i> </a>
-                            </td>
-                        </tr>
-
-
-                    </tbody>
-
-                </table>
             </div>
         </div>
     </div>
-</div>
 </template>
 
 <script>
@@ -99,56 +101,61 @@ export default {
 
 
 <style scoped>
-/* .background-image {
-    text-align: center;
-    background-image: url('~@/pic/bg2.jpg');
-    opacity: 0.8;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
+/* .container-xl {
 } */
+.col {
+    background-color: #382c18;
+    border-radius: 30px;
+    margin-top: 1px;
+    margin-bottom: 17px;
+    padding: 32px;
 
-.BgColor{
-    background-color: rgb(248, 245, 240);
 }
-.container-xl{
-background-color: rgb(248, 245, 240)}
+
+.tablebg {
+    background-color: rgb(232, 205, 159);
+    margin-bottom: 5px;
+    padding: 15px;
+    border-radius: 20px;
+}
+
 .view {
-    cursor: pointer;
+    color: #53450e;
 
 }
-
+.edit{
+    color: #53450e;
+}
+.delete{
+    color: #53450e;
+}
 .material-icons {
     cursor: pointer;
 }
 
-.col {
-    background-color: #382c18;
-    width: 100%;
-    margin-bottom: 5px;
-    padding: 20px;
-}
+
 
 h2 {
     color: rgb(205, 169, 92);
     font-size: 40px;
+    font-weight: bold;
+    text-shadow: 2px 2px #FFFACD;
 }
 
 .btn {
-    color: rgb(46, 38, 6);
+    color: rgb(255, 255, 255);
 }
 
 .btn-secondary {
     position: absolute;
-    background-color: rgb(249, 170, 0);
+    background-color: rgb(220, 194, 149);
     right: 25px;
-    bottom: 10px;
+    bottom: 25px;
 }
 
 /* .section{
     background-image: url('');
     background-attachment: fixed;
     height:100vh;
-} */
-</style>
+} */</style>
    

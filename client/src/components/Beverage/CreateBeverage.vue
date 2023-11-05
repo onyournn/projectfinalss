@@ -1,23 +1,24 @@
 <template>
     <div>
-     <div class="BgColor">
-      <div class="container-xl">
-        <h1>Create Beverage</h1>
-        <form v-on:submit.prevent="createBeverage">
-            <p>name : <input type="text" v-model="beverage.name"></p>
-            <p>brand : <input type="text" v-model="beverage.brand"> </p>
-            <p>price : <input type="text" v-model="beverage.price"> </p>
-            <p>category: <input type="text" v-model="beverage.category"> </p>
-            <!-- <p><button type="submit"></button>Create beverage</p>  -->
-            <button type="submit" class="btn">Create beverage</button> 
+        <div class="BgColor">
+            <div class="container-xl">
+                <h1>Create Beverage</h1>
+                <hr>
+                <form v-on:submit.prevent="createBeverage">
+                    <p>name : <input type="text" v-model="beverage.name"></p>
+                    <p>brand : <input type="text" v-model="beverage.brand"> </p>
+                    <p>price : <input type="text" v-model="beverage.price"> บาท</p>
+                    <p>category : <input type="text" v-model="beverage.category"> </p>
+                    <!-- <p><button type="submit"></button>Create beverage</p>  -->
+                    <button type="submit" class="btn">Create beverage</button>
+                </form>
+                <br>
+                <button v-on:click="navigateTo('/beverages')">back</button>
 
-        </form>
-         <button v-on:click="navigateTo('/beverages')">back</button>
-        
-        <hr>
+                <hr>
+            </div>
+        </div>
     </div>
-</div>
-</div>
 </template>
 <script>
 
@@ -35,7 +36,7 @@ export default {
     },
     methods: {
         navigateTo(route) {
-            this.$router.push(route).catch(err => {})
+            this.$router.push(route).catch(err => { })
         },
         async createBeverage() {
             try {
@@ -49,20 +50,17 @@ export default {
 };
 </script>
 <style scoped>
-
-.BgColor{
+.BgColor {
     background-color: rgb(248, 245, 240);
+    padding: 50px;
+    height: 100vh;
 }
-.container-xl{
-background-color: rgb(248, 245, 240)}
-
 h1 {
-  color: #3f312d;
-  margin-bottom: 10px;
-  font-size: 50px;
-  /* text-decoration: underline; */
-  padding: 5px;
-  font-weight: 500;
+    color: #3f312d;
+    margin-bottom: 10px;
+    font-size: 50px;
+    padding: 5px;
+    font-weight: bold;
 }
 </style>
 
