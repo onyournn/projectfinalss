@@ -25,7 +25,7 @@ export default {
 <style scoped>
 .background-image {
   text-align: center;
-  background-image: url('~@/pic/bg2.jpg');
+  background-image: url('~@/pic/bg5.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -41,19 +41,17 @@ export default {
   height: 100%;
 }
 
-.text {
-  font-size: 50px;
-  -webkit-text-stroke: 1px rgb(230, 226, 150);
-}
 .display-4{
     font-weight: bold  ;
-    color: rgb(242, 228, 187);
-    border-color: rgb(230, 204, 204);
+    color: rgb(255, 236, 178);
+    border-color: rgb(235, 219, 219);
     border-width:2px ;
+    /* font-size: 50px; */
+  -webkit-text-stroke: 1px rgb(65, 57, 12);
 }
 .btn {
-  background-color: rgb(154, 129, 87);
-  border-color: rgb(255, 255, 255);
+  background-color: rgb(100, 75, 50);
+  border-color: rgb(100, 75, 50);
   border-width: 2px;
 }
 </style>
