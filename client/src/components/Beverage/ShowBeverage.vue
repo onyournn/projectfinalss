@@ -4,10 +4,10 @@
             <h1>Get Beverage By Id</h1>
             <hr>
             <p>ID : {{ beverage.id }}</p>
-            <p>ชื่อเครื่องดื่ม : {{ beverage.name }}</p>
-            <p>ยี่ห้อ : {{ beverage.brand }}</p>
-            <p>ราคา : {{ beverage.price }} บาท</p>
-            <p>หมวดหมู่ : {{ beverage.category }}</p>
+            <p>name : {{ beverage.name }}</p>
+            <p>brand : {{ beverage.brand }}</p>
+            <p>price : {{ beverage.price }} bath</p>
+            <p>category : {{ beverage.category }}</p>
             <p>
                 <button v-on:click="navigateTo('/beverage/edit/' + beverage.id)" class="btn">Edit beverage</button>
             </p>

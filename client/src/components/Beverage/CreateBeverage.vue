@@ -7,7 +7,7 @@
                 <form v-on:submit.prevent="createBeverage">
                     <p>name : <input type="text" v-model="beverage.name"></p>
                     <p>brand : <input type="text" v-model="beverage.brand"> </p>
-                    <p>price : <input type="text" v-model="beverage.price"> บาท</p>
+                    <p>price : <input type="text" v-model="beverage.price"> bath</p>
                     <p>category : <input type="text" v-model="beverage.category"> </p>
                     <!-- <p><button type="submit"></button>Create beverage</p>  -->
                     <button type="submit" class="btn">Create beverage</button>

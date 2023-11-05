@@ -120,14 +120,14 @@ export default {
 }
 
 .view {
-    color: #53450e;
+    color: rgb(63, 52, 7);
 
 }
 .edit{
-    color: #53450e;
+    color: rgb(63, 52, 7);
 }
 .delete{
-    color: #53450e;
+    color: rgb(63, 52, 7);
 }
 .material-icons {
     cursor: pointer;
