@@ -109,11 +109,10 @@ export default {
 } */
 
 .BgColor{
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(248, 245, 240);
 }
 .container-xl{
-background-color: rgb(249, 222, 222);
-}
+background-color: rgb(248, 245, 240)}
 .view {
     cursor: pointer;
 

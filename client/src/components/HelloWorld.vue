@@ -3,8 +3,8 @@
     <div class="container-fluid">
 
       <div class="text text-center">
-        <p class="display-4" style="color: #black;"> Sarita Beverage Stroe</p>
-        <button class="btn btn-primary" v-on:click="navigateTo('/beverages')">เข้าสู่เว็บไซต์</button>
+        <p class="display-4" style="color: #black;">Beverage Stroe</p>
+        <button class="btn btn-primary" v-on:click="navigateTo('/beverages')">Enjoy</button>
       </div>
 
     </div>
@@ -25,7 +25,7 @@ export default {
 <style scoped>
 .background-image {
   text-align: center;
-  background-image: url('~@/pic/bg.jpg');
+  background-image: url('~@/pic/bg2.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
@@ -43,16 +43,16 @@ export default {
 
 .text {
   font-size: 50px;
-  -webkit-text-stroke: 1px rgb(206, 160, 160);
+  -webkit-text-stroke: 1px rgb(230, 226, 150);
 }
 .display-4{
     font-weight: bold  ;
-    color: rgb(237, 245, 253);
+    color: rgb(242, 228, 187);
     border-color: rgb(230, 204, 204);
     border-width:2px ;
 }
 .btn {
-  background-color: blueviolet;
+  background-color: rgb(154, 129, 87);
   border-color: rgb(255, 255, 255);
   border-width: 2px;
 }
